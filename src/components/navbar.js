@@ -1,28 +1,16 @@
 import Link from 'next/link';
+import styles from './navbar.module.scss'
 
 const Navbar = () => {
     return(
         <div>
-            <ul>
-                <li><Link href="/"><a>Home</a></Link></li>
-                <li><Link href="/about"><a>About</a></Link></li>
+            <ul className={styles.list}>
+                <li className={styles.listItem}><Link href="/"><a className={styles.text}>Home</a></Link></li>
+                <li className={styles.listItem}><Link href="/about"><a className={styles.text}>About</a></Link></li>
             </ul>
 
             <style jsx>{`
-                ul {
-                    background: #333;
-                    color: #fff;
-                    list-style: none;
-                    display: flex;
-                }
-                ul li {
-                    font-size: 22px;
-                    margin-right: 50px;
-                }
-                ul li a {
-                    color: #fff;
-                    text-decoration: none;
-                }
+                
             `}</style>
         </div>
     );

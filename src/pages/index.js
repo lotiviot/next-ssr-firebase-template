@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import React from 'react'
 
 const Index = ({productData}) => {
-    console.log(productData)
+    //console.log(productData)
     return (
         <Layout>
             <div>
@@ -23,7 +23,7 @@ const Index = ({productData}) => {
 
 Index.getInitialProps = async function() {
     const response = await fetch(`https://gorest.co.in/public-api/products`);
-    console.log(response)
+    //console.log(response)
     const result = await response.json();
     return { productData: result.data }
 }

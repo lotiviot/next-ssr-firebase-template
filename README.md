@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DELETE ALL FILES IN PUBLIC SO THAT SERVERSIDE RENDERING WILL TAKE PLACE
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with Tristan's Template UwU.
 
 ## Getting Started
 
@@ -27,8 +29,32 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Firebase
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To deploy on Google Firebase do the following
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm install firebase-tools
+firebase init
+select hosting
+1. you will decide a public directory (it's public)
+2. you will decide to rewrite it as a SPA (don't)
+3. you will set up auto deploys with github (do that)
+4. visit the URL
+5. you will select a repository to deploy it to
+6. overwrite the .yamls 
+```
+
+recopy the function to the from firebase.json in the template to this one or copy it here put it after the ignore array in the firebase.json
+
+```
+,
+    "rewrites": [
+      {
+        "source":"**",
+        "function":"nextServer"
+      }
+    ]
+
+```
+
